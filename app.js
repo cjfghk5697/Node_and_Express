@@ -3,6 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+var mongoDB="mongodb+srv://han:5697ys1253@cluster0.zitgj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
+var db=mongoose.connection;
+db.on('error',console.error.bind(console,'MongoDB connection error:'));
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
