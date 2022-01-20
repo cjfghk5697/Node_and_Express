@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//series는 전부다 해야 끝남, waterfall은 하나하나 하는데 하나 끝나면 결과값 주고 다음으로 넘어감
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalog',catalogRouter);
