@@ -15,4 +15,10 @@ GenreSchema
     return '/catalog/genre'+this._id;
 });
 
+GenreSchema
+.virtural('title')
+.get(function(){
+    return this.name;
+});
+
 module.exports=mongoose.model('Genre',GenreSchema);
