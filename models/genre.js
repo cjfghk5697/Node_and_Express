@@ -16,7 +16,7 @@ GenreSchema
 });
 
 GenreSchema
-.virtural('title')
+.virtual('title')
 .get(function(){
     return this.name;
 });
